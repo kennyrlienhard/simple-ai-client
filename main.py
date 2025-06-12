@@ -26,8 +26,7 @@ if prompt := st.chat_input("Du fragst. Die Fintool AI antwortet."):
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
         with st.spinner("Die Fintool AI denkt nach..."):
-            # Check if running in production by checking Streamlit's environment
-            is_prod = st.secrets.get("ENV", "dev") == "prod"
+            is_prod = st.secrets.get("ENV", "development") == "production"
 
             api_url = (
                 "https://default-756637458404.europe-west6.run.app/api/queries"
